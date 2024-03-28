@@ -1,6 +1,5 @@
 #### Règles activés
 
-
 Voilà les règles qui ont été activés :
 
 ```
