@@ -1,0 +1,24 @@
+name: ypathe
+services:
+    mysql:
+      environment:
+        - MYSQL_ROOT_PASSWORD=1234
+        - MYSQL_DATABASE=cinema
+      image: mysql:latest
+      container_name: mysql
+      expose:
+        - 3306
+      networks:
+        - default
+    node:
+      ports:
+        - 3000:3000
+      image: tp3node
+      container_name: node
+      networks:
+        - default
+      depends_on:
+        - mysql
+networks:
+  default:
+    driver: bridge
